@@ -14,6 +14,7 @@
 
 #include "IPCBox.h"
 
+const String SET_NODE = "1234";
 IPCBox ib;
 String s;
 
@@ -23,7 +24,7 @@ void setup() {
   ib.init();                
   while (ib.get_imbusy());              // BUSY解除までループ
   while (!ib.put_line("ENWR\r\n"));     // Flash書き込み許可
-  while (!ib.put_line("STNN1234\r\n")); // ノード番号 = 1234h / 0000,0001,FFF0~FFFFは設定不可
+  while (!ib.put_line("STNN"+SET_NODE+"\r\n")); // 設定するノード番号 / 0000,0001,FFF0~FFFFは設定不可
   while (!ib.put_line("STGN\r\n"));     // グループ番号登録開始
   
   while (flg) {                         // 電源Offまで登録待機状態 / 親機の50cm以内に近づけて下さい
