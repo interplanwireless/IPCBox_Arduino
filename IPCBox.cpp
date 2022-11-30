@@ -13,7 +13,7 @@
 
 //内部変数
 static Uart im920Ser(&sercom4, def_IB_IMRXD, def_IB_IMTXD, SERCOM_RX_PAD_1, UART_TX_PAD_0);
-static Uart imBleSer(&sercom5, def_IB_BLETXD, def_IB_BLERXD, SERCOM_RX_PAD_1, UART_TX_PAD_0); 
+static Uart imBleSer(&sercom5, def_IB_BLERXD, def_IB_BLETXD, SERCOM_RX_PAD_1, UART_TX_PAD_0); 
 
 
 // 初期化
